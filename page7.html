@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Rani Tersayang ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0000 0%, #4a0000 50%, #1a0000 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 77, 109, 0.6);
+            animation: floatHeart 8s linear infinite;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+            100% { transform: translateY(-20vh) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 245, 240, 0.97);
+            border-radius: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            padding: 50px;
+            border: 3px solid #ffc0cb;
+            position: relative;
+            z-index: 10;
+        }
+
+        .final-message {
+            background: linear-gradient(135deg, #ff4d6d, #ff8da1);
+            padding: 60px;
+            border-radius: 50px;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 58px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .heart-big {
+            font-size: 80px;
+            animation: heartbeat 1.2s ease infinite;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.3); }
+            35% { transform: scale(1); }
+            45% { transform: scale(1.2); }
+        }
+
+        .quiz-container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255,77,109,0.2);
+        }
+
+        .quiz-question {
+            font-size: 26px;
+            color: #8b1e1e;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .quiz-btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            margin: 15px 0;
+            background: #ffe4e1;
+            border: 2px solid #ffb6c1;
+            border-radius: 15px;
+            font-size: 20px;
+            color: #8b1e1e;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .quiz-btn:hover {
+            background: #ff4d6d;
+            color: white;
+            border-color: #ff4d6d;
+            transform: scale(1.02);
+        }
+
+        .love-letter {
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(255,77,109,0.15);
+            border: 2px solid #ffc0cb;
+        }
+
+        .interaction-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .interaction-btn {
+            background: none;
+            border: 3px solid #ff4d6d;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #8b1e1e;
+            font-weight: bold;
+        }
+
+        .interaction-btn:hover {
+            background: #ff4d6d;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8da1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 20px;
+            margin: 15px;
+            transition: all 0.4s;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255,77,109,0.6);
+        }
+
+        .button-back {
+            background: #999;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .hidden-message {
+            display: none;
+            background: linear-gradient(145deg, #4CAF50, #45a049);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 25px; }
+            h1 { font-size: 48px; }
+            .final-message { padding: 40px; }
+            .interaction-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="container">
+        <div class="final-message">
+            <div class="heart-big">💝</div>
+            <h1>Happy Valentine's Day!</h1>
+            <h2 style="color: #fff0f5; font-family: 'Dancing Script'; font-size: 42px; margin-bottom: 20px;">
+                Untuk Rani, Cintaku
+            </h2>
+            
+            <div style="font-size: 70px; margin: 30px 0;">
+                🌹 💕 🌹
+            </div>
+            
+            <p style="color: white; font-size: 32px; font-family: 'Dancing Script';">
+                My one and only, my everything
+            </p>
+        </div>
+        
+        <div class="quiz-container">
+            <div class="quiz-question">
+                ❓ Pertanyaan Spesial untuk Rani:<br>
+                <span style="font-size: 28px;">"Siapa pacar Rani yang paling baik, ganteng, dan setia?"</span>
+            </div>
+            
+            <div class="quiz-btn" onclick="checkAnswer('correct', this)">
+                A. [NAMA KAMU] - Pacarmu sendiri ❤️
+            </div>
+            <div class="quiz-btn" onclick="checkAnswer('wrong', this)">
+                B. Cowok lain (Jangan dipilih dong!)
+            </div>
+            <div class="quiz-btn" onclick="checkAnswer('wrong', this)">
+                C. Artis Korea (Kamu mah artisku)
+            </div>
+            
+            <div id="loveMessage" class="hidden-message">
+                <span style="font-size: 50px;">🎉❤️🎉</span>
+                <p style="font-size: 32px; color: white; margin: 20px 0;">BENAR SEKALI! 🥹</p>
+                <p style="font-size: 24px; color: white;">Kamu adalah hadiah terindah dalam hidupku</p>
+                <p style="font-size: 28px; color: white; margin-top: 20px;">I LOVE YOU, RANI! ❤️</p>
+            </div>
+        </div>
+        
+        <div class="love-letter">
+            <span style="font-size: 60px; display: block; text-align: center;">💌</span>
+            <h2 style="color: #8b1e1e; font-size: 42px; font-family: 'Dancing Script'; text-align: center; margin: 20px 0;">
+                Surat Cinta di Hari Valentine
+            </h2>
+            
+            <div style="text-align: left; font-size: 20px; line-height: 1.8;">
+                <p style="font-style: normal;">Sayangku Rani,</p>
+                <p style="font-style: normal; text-indent: 40px; margin-top: 20px;">
+                    Selamat Hari Valentine, cintaku. Di hari spesial ini, aku cuma mau bilang kalau kamu adalah hadiah terindah dalam hidupku. Maaf aku belum bisa memberi kamu bunga mawar merah atau coklat manis secara langsung. Tapi aku harap, website kecil ini bisa jadi penggantinya.
+                </p>
+                <p style="font-style: normal; text-indent: 40px; margin-top: 20px;">
+                    Terima kasih udah mau bertahan dalam hubungan jarak jauh ini. Aku tahu ini nggak mudah. Banyak malam di mana aku kangen banget sama kamu, pengen peluk, pengen ketawa bareng, pengen ngelakuin hal-hal sederhana kayak jalan-jalan atau makan es krim bareng. Tapi meskipun jarak memisahkan, hatiku selalu dekat denganmu.
+                </p>
+                <p style="font-style: normal; text-indent: 40px; margin-top: 20px;">
+                    Kamu adalah alasan aku tersenyum di tengah penatnya hari. Kamu adalah semangatku buat terus jadi pribadi yang lebih baik. Aku bersyukur banget punya kamu.
+                </p>
+                <p style="font-style: normal; text-indent: 40px; margin-top: 20px;">
+                    Janji ya, kita akan terus bersama. Aku akan jemput kamu suatu hari nanti, dan kita nggak akan berpisah lagi. Aku sayang kamu, Rani. I love you more than words can say.
+                </p>
+                <p style="font-style: normal; text-align: right; margin-top: 50px;">
+                    Forever yours,<br>
+                    <span style="font-size: 28px; font-family: 'Dancing Script';">[NAMA KAMU]</span> ❤️
+                </p>
+            </div>
+        </div>
+        
+        <div class="interaction-buttons">
+            <button onclick="sendHug()" class="interaction-btn">
+                🤗 Peluk Aku
+            </button>
+            <button onclick="sendKiss()" class="interaction-btn">
+                😘 Cium Aku
+            </button>
+        </div>
+        
+        <div style="text-align: center; margin: 50px 0;">
+            <p style="font-size: 36px; font-family: 'Dancing Script'; color: #8b1e1e;">
+                Sampai jumpa di mimpi dan kenyataan, sayang 💫
+            </p>
+            <p style="font-size: 24px; color: #b22222; margin-top: 20px;">
+                I love you 3000 ❤️
+            </p>
+        </div>
+        
+        <div class="button-container">
+            <a href="page6.html" class="button button-back">⬅ Kembali</a>
+            <a href="opening.html" class="button" style="background: #ffd700; color: #8b1e1e;">
+                🎵 Mulai Cerita dari Awal
+            </a>
+        </div>
+        
+        <p style="text-align: center; margin-top: 50px; color: #666; font-size: 16px; border-top: 2px solid #ffc0cb; padding-top: 30px;">
+            Dibuat dengan sepenuh cinta untuk Rani 💕<br>
+            Valentine, 14 Februari 2024<br>
+            Dari pacarmu yang selalu merindukanmu<br>
+            <span style="font-size: 20px; color: #8b1e1e;">[NAMA KAMU]</span>
+        </p>
+    </div>
+
+    <script>
+        // Floating Hearts
+        function createFloatHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            heart.innerHTML = ['❤️', '💕', '💗', '💓', '💖'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 30 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.getElementById('floatingHearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createFloatHeart, 300);
+        
+        // Quiz Answer
+        function checkAnswer(answer, element) {
+            if (answer === 'correct') {
+                element.style.background = 'linear-gradient(145deg, #4CAF50, #45a049)';
+                element.style.color = 'white';
+                element.style.border = 'none';
+                document.getElementById('loveMessage').style.display = 'block';
+                
+                // Confetti love
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '❤️';
+                        heart.style.position = 'fixed';
+                        heart.style.left = Math.random() * 100 + '%';
+                        heart.style.top = '50%';
+                        heart.style.fontSize = Math.random() * 40 + 20 + 'px';
+                        heart.style.animation = 'floatHeart 2s ease-out forwards';
+                        document.body.appendChild(heart);
+                        setTimeout(() => heart.remove(), 2000);
+                    }, i * 20);
+                }
+            } else {
+                element.style.background = '#ff6b6b';
+                element.style.color = 'white';
+                element.style.border = 'none';
+                alert('Coba lagi ya sayang! Yang bener A 😘');
+                
+                setTimeout(() => {
+                    element.style.background = '#ffe4e1';
+                    element.style.color = '#8b1e1e';
+                }, 1000);
+            }
+        }
+        
+        // Virtual Hug
+        function sendHug() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const hug = document.createElement('div');
+                    hug.innerHTML = '🤗';
+                    hug.style.position = 'fixed';
+                    hug.style.left = Math.random() * window.innerWidth + 'px';
+                    hug.style.top = Math.random() * window.innerHeight + 'px';
+                    hug.style.fontSize = '60px';
+                    hug.style.animation = 'floatHeart 2s ease-out';
+                    hug.style.pointerEvents = 'none';
+                    document.body.appendChild(hug);
+                    setTimeout(() => hug.remove(), 2000);
+                }, i * 50);
+            }
+            alert('🤗 Kamu dapat pelukan hangat dari pacarmu! I miss you, Rani!');
+        }
+        
+        // Virtual Kiss
+        function sendKiss() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const kiss = document.createElement('div');
+                    kiss.innerHTML = '😘';
+                    kiss.style.position = 'fixed';
+                    kiss.style.left = Math.random() * window.innerWidth + 'px';
+                    kiss.style.top = Math.random() * window.innerHeight + 'px';
+                    kiss.style.fontSize = '60px';
+                    kiss.style.animation = 'floatHeart 2s ease-out';
+                    kiss.style.pointerEvents = 'none';
+                    document.body.appendChild(kiss);
+                    setTimeout(() => kiss.remove(), 2000);
+                }, i * 50);
+            }
+            alert('😘 Mwah! Cium buat Rani sayang! I love you!');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌹 Untuk Rani - Hari Valentine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0000 0%, #4a0000 50%, #1a0000 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 77, 109, 0.6);
+            animation: floatHeart 8s linear infinite;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-20vh) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 245, 240, 0.97);
+            border-radius: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            padding: 50px;
+            border: 3px solid #ffc0cb;
+            position: relative;
+            z-index: 10;
+            animation: pageEntrance 1.2s ease-out;
+        }
+
+        @keyframes pageEntrance {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-banner {
+            background: linear-gradient(135deg, #ff4d6d, #ff8da1);
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            margin-bottom: 30px;
+            animation: slideDown 1s ease;
+            text-align: center;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-100px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-text {
+            font-size: 28px;
+            font-family: 'Dancing Script', cursive;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+            50% { text-shadow: 0 0 30px rgba(255,255,255,1); }
+        }
+
+        .heart {
+            color: #ff4d6d;
+            font-size: 60px;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: heartbeat 1.2s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.3); }
+            35% { transform: scale(1); }
+            45% { transform: scale(1.2); }
+            55% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #8b1e1e;
+            text-align: center;
+            font-size: 52px;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 2px 2px 4px rgba(255,182,193,0.5);
+        }
+
+        h2 {
+            color: #b22222;
+            text-align: center;
+            font-size: 36px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 30px;
+        }
+
+        .distance-heart {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .city {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        .city-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #8b1e1e;
+        }
+
+        .connecting-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff4d6d, #ffb3c6, #ff4d6d);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .floating-heart-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            animation: floatHeart 3s ease-in-out infinite;
+            background: white;
+            padding: 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255,77,109,0.5);
+            z-index: 3;
+        }
+
+        .message-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 10px solid #ff4d6d;
+        }
+
+        .sender-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            color: #8b1e1e;
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8da1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px;
+            transition: all 0.4s;
+            box-shadow: 0 10px 25px rgba(255,77,109,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255,77,109,0.6);
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .ldr-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            background: linear-gradient(145deg, #ff9a9e, #fad0c4);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #8b1e1e;
+        }
+
+        .mood-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 25px; }
+            h1 { font-size: 40px; }
+            h2 { font-size: 30px; }
+            .distance-heart { flex-direction: column; height: auto; gap: 30px; }
+            .connecting-line { display: none; }
+            .floating-heart-center { position: relative; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="container">
+        <div class="welcome-banner">
+            <p class="welcome-text">✨ Selamat datang sayang! Aku sudah menunggumu ✨</p>
+        </div>
+
+        <div class="heart">💝</div>
+        
+        <h1>Dear My Love, Rani</h1>
+        
+        <div style="text-align: center; margin: 30px 0; font-size: 28px; font-family: 'Dancing Script'; color: #8b1e1e;">
+            "Jarak 500km tak mampu<br>memisahkan hati yang saling terikat"
+        </div>
+        
+        <div class="distance-heart">
+            <div class="city">
+                <span style="font-size: 40px;">🏠</span>
+                <div class="city-name">[NAMA KOTA KAMU]</div>
+                <div style="color: #666;">Tempat aku merindukanmu</div>
+            </div>
+            
+            <div class="connecting-line"></div>
+            
+            <div class="floating-heart-center">
+                ❤️
+            </div>
+            
+            <div class="city">
+                <span style="font-size: 40px;">🏡</span>
+                <div class="city-name">[NAMA KOTA RANI]</div>
+                <div style="color: #666;">Tempat kamu tersenyum</div>
+            </div>
+        </div>
+        
+        <div class="message-box">
+            <p style="font-size: 22px; line-height: 1.8; color: #4a0404;">
+                Halo sayangnya aku, Rani... 🌹<br><br>
+                Selamat Hari Valentine, cintaku. Maaf aku belum bisa memberikan bunga atau coklat secara langsung. Tapi aku buatkan ini khusus untukmu, sebagai bukti bahwa meskipun kita terpisah jarak, kamu selalu di hati.<br><br>
+                Di website ini, ada cerita kita, kenangan indah, dan janji-janji yang akan aku tepati. Semoga kamu suka ya, sayang.<br><br>
+                Seperti bintang yang setia menemani malam, aku akan selalu setia menunggumu, meski jarak memisahkan.
+            </p>
+            <div class="sender-name">
+                Dari pacarmu yang sangat merindukanmu,<br>
+                [NAMA KAMU] 💕
+            </div>
+        </div>
+        
+        <div class="ldr-stats">
+            <div class="stat-item">
+                <div class="stat-number">500</div>
+                <div>KM Jarak</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">365</div>
+                <div>Hari LDR</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div>Cinta</div>
+            </div>
+        </div>
+        
+        <div class="mood-section">
+            <div style="text-align: center;">
+                <span style="font-size: 50px;">😊</span>
+                <p style="color: #8b1e1e;">Aku hari ini:<br><strong>Kangen Rani</strong></p>
+            </div>
+            <div style="text-align: center;">
+                <span style="font-size: 50px;">💭</span>
+                <p style="color: #8b1e1e;">Lagi mikirin:<br><strong>Kapan ketemu Rani</strong></p>
+            </div>
+            <div style="text-align: center;">
+                <span style="font-size: 50px;">🎵</span>
+                <p style="color: #8b1e1e;">Lagu yang diputar:<br><strong>Lagu favorit kita</strong></p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 50px 0;">
+            <p style="font-size: 28px; font-family: 'Dancing Script'; color: #8b1e1e;">
+                Siap untuk memulai perjalanan kisah kita? 💫
+            </p>
+        </div>
+        
+        <div class="button-container">
+            <a href="page2.html" class="button" style="padding: 20px 60px; font-size: 24px;">
+                Mulai Cerita Kita ❤️
+            </a>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; color: #666; font-size: 14px;">
+            Dibuat spesial untuk Rani • Valentine 2024 • From LDR Boyfriend
+        </p>
+    </div>
+
+    <script>
+        // Floating Hearts
+        function createFloatHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            const loves = ['❤️', '💕', '💗', '💓', '💖', '💘'];
+            heart.innerHTML = loves[Math.floor(Math.random() * loves.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 30 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.getElementById('floatingHearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createFloatHeart, 300);
+        for (let i = 0; i < 20; i++) setTimeout(createFloatHeart, i * 100);
+    </script>
+</body>
+</html>

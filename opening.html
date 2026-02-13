@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌹 Untuk Rani - Hari Valentine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & DASAR ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #1a0000, #2c0000);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* ========== SCROLL BISA! ========== */
+        html, body {
+            overflow-y: auto !important;
+            height: auto !important;
+        }
+
+        /* ========== LOVE RAIN ========== */
+        .love-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .rain-heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 77, 109, 0.8);
+            animation: rain linear infinite;
+            text-shadow: 0 0 10px rgba(255,77,109,0.5);
+        }
+
+        @keyframes rain {
+            0% { transform: translateY(-20vh) translateX(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(120vh) translateX(20px) rotate(360deg); opacity: 0; }
+        }
+
+        /* ========== ROSE PETALS ========== */
+        .rose-petals {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .petal {
+            position: absolute;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff4d6d" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+            background-size: contain;
+            width: 30px;
+            height: 30px;
+            opacity: 0;
+            animation: petalFall 8s linear infinite;
+        }
+
+        @keyframes petalFall {
+            0% { top: -10%; opacity: 0.8; transform: rotate(0deg); }
+            100% { top: 110%; opacity: 0; transform: rotate(360deg); }
+        }
+
+        /* ========== CONTAINER UTAMA - UDAH DIKECILIN! ========== */
+        .opening-container {
+            position: relative;
+            z-index: 100;
+            max-width: 800px;
+            width: 95%;
+            background: rgba(255, 245, 240, 0.97);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 30px 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            border: 3px solid rgba(255, 192, 203, 0.8);
+            animation: containerPop 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin: 30px auto;
+        }
+
+        @keyframes containerPop {
+            0% { opacity: 0; transform: scale(0.3) rotate(-10deg); }
+            50% { opacity: 0.8; transform: scale(1.05) rotate(2deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        /* ========== LOVE SEAL ========== */
+        .love-seal {
+            text-align: center;
+            margin-bottom: 15px;
+            animation: sealAppear 1.5s ease 0.3s both;
+        }
+
+        @keyframes sealAppear {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart-big {
+            font-size: 70px;
+            animation: heartbeat 1.2s ease infinite;
+            display: inline-block;
+            filter: drop-shadow(0 0 30px rgba(255,77,109,0.7));
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            35% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            55% { transform: scale(1); }
+        }
+
+        /* ========== TEXT GLOW ========== */
+        .glowing-text {
+            font-size: 52px;
+            font-family: 'Dancing Script', cursive;
+            color: #8b1e1e;
+            text-align: center;
+            animation: glowText 2s ease-in-out infinite;
+            text-shadow: 0 0 20px #ff4d6d, 0 0 40px #ff8da1;
+            line-height: 1.2;
+        }
+
+        @keyframes glowText {
+            0%, 100% { text-shadow: 0 0 20px #ff4d6d, 0 0 40px #ff8da1; }
+            50% { text-shadow: 0 0 40px #ff4d6d, 0 0 80px #ff8da1, 0 0 120px #ffb6c1; }
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: #c41e3a;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== TYPEWRITER ========== */
+        .typewriter-container {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 192, 203, 0.2);
+            border-radius: 20px;
+            border-left: 6px solid #ff4d6d;
+            animation: slideIn 1s ease 1.2s both;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .typewriter {
+            font-size: 26px;
+            font-family: 'Dancing Script', cursive;
+            color: #4a0404;
+            text-align: center;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        /* ========== PROGRESS BAR ========== */
+        .loading-progress {
+            width: 80%;
+            height: 5px;
+            background: rgba(255,77,109,0.2);
+            border-radius: 3px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d6d, #ffb6c1);
+            border-radius: 3px;
+            animation: progressLoad 2s ease-out forwards;
+        }
+
+        @keyframes progressLoad {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* ========== TOMBOL UTAMA - DIPINDAH KE ATAS! ========== */
+        .button-wrapper {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            display: block;
+            width: 100%;
+        }
+
+        .enter-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8da1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255,77,109,0.5);
+            animation: buttonPulse 2s infinite;
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 3px;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 200;
+        }
+
+        .enter-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(255,77,109,0.8);
+            background: linear-gradient(45deg, #ff3355, #ff6b8b);
+        }
+
+        .enter-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .enter-button:hover::before {
+            left: 100%;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ========== STIKER PERINGATAN ========== */
+        .warning-sticker {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .warning-sticker p {
+            color: #ff4d6d;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255,77,109,0.3);
+            border: 2px solid #ff4d6d;
+        }
+        
+        /* ========== QUOTE ========== */
+        .quote-text {
+            font-size: 20px;
+            color: #6b0f0f;
+            font-style: italic;
+            text-align: center;
+            margin: 15px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease 2.5s forwards;
+            padding: 0 10px;
+        }
+        
+        /* ========== FOOTER ========== */
+        .footer-text {
+            text-align: center;
+            margin-top: 15px;
+            color: #8b1e1e;
+            font-size: 16px;
+            padding-bottom: 10px;
+        }
+
+        /* ========== SPARKLES ========== */
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        /* ========== ANIMASI FADE ========== */
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .opening-container { padding: 20px 15px; }
+            .glowing-text { font-size: 42px; }
+            .subtitle { font-size: 24px; }
+            .typewriter { font-size: 22px; }
+            .enter-button { font-size: 22px; padding: 14px 30px; }
+            .heart-big { font-size: 60px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- LOVE RAIN ANIMATION -->
+    <div class="love-rain" id="loveRain"></div>
+    
+    <!-- ROSE PETALS ANIMATION -->
+    <div class="rose-petals" id="rosePetals"></div>
+
+    <!-- MAIN CONTENT - UDAH DIKECILIN! -->
+    <div class="opening-container">
+        <!-- LOVE SEAL -->
+        <div class="love-seal">
+            <span class="heart-big">💝</span>
+        </div>
+
+        <!-- TITLE -->
+        <div class="title-wrapper">
+            <div class="glowing-text">Untuk Rani</div>
+            <div class="subtitle">Cintaku di Hari Valentine</div>
+        </div>
+
+        <!-- TYPEWRITER EFFECT -->
+        <div class="typewriter-container">
+            <div class="typewriter" id="typewriter"></div>
+        </div>
+
+        <!-- ROMANTIC QUOTE -->
+        <div class="quote-text">
+            "Jarak 500km tak mampu memisahkan hati yang saling terikat"
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="loading-progress">
+            <div class="progress-fill"></div>
+        </div>
+
+        <!-- ========== TOMBOL PINDAH KE ATAS! ========== -->
+        <div class="button-wrapper">
+            <a href="index.html" class="enter-button" id="enterButton">
+                💝 Buka Surat Cinta ✨
+            </a>
+        </div>
+
+        <!-- STIKER PERINGATAN -->
+        <div class="warning-sticker">
+            <p>
+                ⬇️ KLIK TOMBOL DI ATAS! ⬇️
+            </p>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer-text">
+            ❤️ Dari pacarmu yang selalu merindukanmu ❤️
+        </div>
+    </div>
+
+    <script>
+        // ========== LOVE RAIN ==========
+        function createRainHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('rain-heart');
+            const loves = ['❤️', '💕', '💗', '💓', '💖', '💘', '💝', '💞'];
+            heart.innerHTML = loves[Math.floor(Math.random() * loves.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 25 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 4 + 3 + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('loveRain').appendChild(heart);
+            setTimeout(() => heart.remove(), 8000);
+        }
+        
+        setInterval(createRainHeart, 200);
+        for (let i = 0; i < 30; i++) {
+            setTimeout(createRainHeart, i * 50);
+        }
+
+        // ========== ROSE PETALS ==========
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.width = Math.random() * 20 + 15 + 'px';
+            petal.style.height = petal.style.width;
+            petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.getElementById('rosePetals').appendChild(petal);
+            setTimeout(() => petal.remove(), 10000);
+        }
+        
+        setInterval(createPetal, 300);
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createPetal, i * 100);
+        }
+
+        // ========== TYPEWRITER - LEBIH CEPET! ==========
+        const text = "Halo Rani... ❤️\nAku punya sesuatu spesial buat kamu...";
+        const typewriterElement = document.getElementById('typewriter');
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                if (text.charAt(i) === '\n') {
+                    typewriterElement.innerHTML += '<br>';
+                } else {
+                    typewriterElement.innerHTML += text.charAt(i);
+                }
+                i++;
+                setTimeout(typeWriter, 80); // LEBIH CEPET!
+            }
+        }
+        
+        setTimeout(typeWriter, 800);
+
+        // ========== SPARKLES ==========
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            document.querySelector('.opening-container').appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 2000);
+        }
+        
+        setInterval(createSparkle, 500);
+
+        // ========== TOMBOL CLICK EFFECT ==========
+        const enterButton = document.getElementById('enterButton');
+        
+        if (enterButton) {
+            enterButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                for (let i = 0; i < 60; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '❤️';
+                        heart.style.position = 'fixed';
+                        heart.style.left = '50%';
+                        heart.style.top = '50%';
+                        heart.style.fontSize = Math.random() * 40 + 20 + 'px';
+                        heart.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
+                        heart.style.animation = 'rain 1s ease-out forwards';
+                        heart.style.zIndex = '9999';
+                        document.body.appendChild(heart);
+                        setTimeout(() => heart.remove(), 1000);
+                    }, i * 15);
+                }
+                
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 800);
+            });
+        }
+
+        // ========== GRADIENT BACKGROUND ==========
+        let gradient = 0;
+        setInterval(() => {
+            gradient = (gradient + 1) % 360;
+            document.body.style.background = `linear-gradient(${gradient}deg, #1a0000, #2c0000, #330000)`;
+        }, 100);
+
+        // ========== VERIFIKASI ==========
+        window.onload = function() {
+            console.log('✅ OPENING SIAP!');
+            const btn = document.getElementById('enterButton');
+            if (btn) {
+                console.log('✅ TOMBOL MUNCUL!');
+                btn.style.display = 'inline-block';
+            }
+        };
+    </script>
+</body>
+</html>
