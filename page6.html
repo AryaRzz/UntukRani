@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>💍 Janji Cinta - Rani & [Nama Kamu]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0000 0%, #4a0000 100%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            position: relative;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 16px;
+            color: rgba(255, 77, 109, 0.5);
+            animation: floatHeart 8s linear infinite;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            100% { transform: translateY(-20vh) translateX(50px); opacity: 0; }
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: rgba(255, 245, 240, 0.98);
+            border-radius: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            padding: 25px 20px;
+            border: 2px solid #ffc0cb;
+            position: relative;
+            z-index: 10;
+            margin: 15px auto;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #8b1e1e;
+            text-align: center;
+            font-size: 42px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .promise-section {
+            background: linear-gradient(145deg, #fff0f5, #ffe4e9);
+            padding: 30px 20px;
+            border-radius: 35px;
+            margin: 25px 0;
+        }
+
+        .couple-icon {
+            font-size: 70px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .promise-title {
+            font-size: 32px;
+            color: #8b1e1e;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .promise-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .promise-item {
+            background: white;
+            padding: 18px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 5px 15px rgba(255,77,109,0.1);
+        }
+
+        .promise-number {
+            width: 40px;
+            height: 40px;
+            background: #ff4d6d;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .promise-text {
+            font-size: 16px;
+            color: #8b1e1e;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .dream-section {
+            background: #1a1a2e;
+            padding: 30px 20px;
+            border-radius: 30px;
+            color: white;
+            margin: 30px 0;
+        }
+
+        .dream-title {
+            color: #ffd700;
+            font-size: 30px;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .dream-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .dream-item {
+            text-align: center;
+        }
+
+        .dream-icon {
+            font-size: 50px;
+            margin-bottom: 8px;
+        }
+
+        .dream-text {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .dream-quote {
+            font-size: 22px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            color: #ffd700;
+            margin-top: 25px;
+            line-height: 1.5;
+        }
+
+        .question-box {
+            text-align: center;
+            margin: 30px 0 20px;
+        }
+
+        .question-text {
+            font-size: 24px;
+            color: #8b1e1e;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 20px;
+        }
+
+        .answer-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .answer-btn {
+            padding: 14px 25px;
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Dancing Script', cursive;
+            border: 2px solid white;
+            cursor: pointer;
+            -webkit-appearance: none;
+            flex: 1 1 140px;
+        }
+
+        .answer-btn:active {
+            transform: scale(0.95);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8da1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 6px 18px rgba(255,77,109,0.4);
+            border: 2px solid white;
+            transition: all 0.2s;
+            margin: 5px;
+            -webkit-appearance: none;
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button-back {
+            background: #888;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 380px) {
+            .container { padding: 20px 15px; }
+            h1 { font-size: 38px; }
+            .promise-title { font-size: 28px; }
+            .dream-title { font-size: 28px; }
+            .dream-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="container">
+        <h1>💍 Janji Cintaku</h1>
+
+                <!-- FOTO RANI DI JANJI CINTA -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="assets/rani5.jpg" alt="Rani" 
+                 style="width: 120px; height: 120px; border-radius: 30px; object-fit: cover; border: 4px solid #ffd700; box-shadow: 0 10px 30px rgba(255,77,109,0.5);"
+                 onerror="this.style.display='none'">
+            <p style="color: #8b1e1e; font-family: 'Dancing Script'; font-size: 24px; margin-top: 10px;">Demi kamu, aku berjanji...</p>
+        </div>
+        
+        <div class="promise-section">
+            <div class="couple-icon">🤵 👰</div>
+            <div class="promise-title">Aku berjanji...</div>
+            
+            <div class="promise-list">
+                <div class="promise-item">
+                    <div class="promise-number">1</div>
+                    <div class="promise-text">Aku janji akan selalu setia, hanya untukmu</div>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-number">2</div>
+                    <div class="promise-text">Aku janji akan selalu ada di saat kamu butuh</div>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-number">3</div>
+                    <div class="promise-text">Aku janji akan selalu jadi pendengar terbaik buat cerita kamu</div>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-number">4</div>
+                    <div class="promise-text">Aku janji akan selalu jaga komunikasi kita</div>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-number">5</div>
+                    <div class="promise-text">Aku janji gak akan pernah bohong sama kamu</div>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-number">6</div>
+                    <div class="promise-text">Aku janji akan membahagiakanmu, hari ini dan selamanya</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="dream-section">
+            <div class="dream-title">✨ Impian Kita Nanti ✨</div>
+            
+            <div class="dream-grid">
+                <div class="dream-item">
+                    <div class="dream-icon">🏠</div>
+                    <div class="dream-text">Rumah kecil yang hangat</div>
+                </div>
+                <div class="dream-item">
+                    <div class="dream-icon">🌊</div>
+                    <div class="dream-text">Liburan ke pantai</div>
+                </div>
+                <div class="dream-item">
+                    <div class="dream-icon">🎂</div>
+                    <div class="dream-text">Rayain anniversary</div>
+                 </div>
+                <div class="dream-item">
+                    <div class="dream-icon">👶</div>
+                    <div class="dream-text">Keluarga kecil</div>
+                </div>
+            </div>
+            
+            <div class="dream-quote">
+                "Aku mau semua impian ini<br>jadi kenyataan bersamamu"
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-text">
+                Maukah kamu mewujudkannya bersamaku?
+            </div>
+            
+            <div class="answer-buttons">
+                <button onclick="answerYes()" class="answer-btn" style="background: #ff4d6d;">
+                    ❤️ MAU ❤️
+                </button>
+                <button onclick="answerYes()" class="answer-btn" style="background: #ff8da1;">
+                    💕 SANGAT MAU 💕
+                </button>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <a href="page5.html" class="button button-back">⬅ Kembali</a>
+            <a href="page7.html" class="button">Kejutan Terakhir 🎁</a>
+        </div>
+    </div>
+
+    <script>
+        function createFloatHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            heart.innerHTML = ['❤️', '💕', '💗', '💓', '💖'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 15 + 12 + 'px';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.getElementById('floatingHearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createFloatHeart, 400);
+        
+        function answerYes() {
+            alert('🥹 Terima kasih, Rani! Aku janji akan selalu berusaha membahagiakanmu! ❤️');
+            
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.top = '50%';
+                    heart.style.fontSize = Math.random() * 30 + 15 + 'px';
+                    heart.style.animation = 'floatHeart 2s ease-out forwards';
+                    heart.style.zIndex = '9999';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 2000);
+                }, i * 30);
+            }
+        }
+    </script>
+</body>
+</html>

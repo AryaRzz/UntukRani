@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>🌹 Untuk Rani - Opening</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            background: linear-gradient(145deg, #1a0000, #2c0000);
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            position: relative;
+        }
+
+        .love-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .rain-heart {
+            position: absolute;
+            font-size: 18px;
+            color: rgba(255, 77, 109, 0.7);
+            animation: rain linear infinite;
+        }
+
+        @keyframes rain {
+            0% { transform: translateY(-10vh) translateX(0); opacity: 1; }
+            100% { transform: translateY(110vh) translateX(20px); opacity: 0; }
+        }
+
+        .rose-petals {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .petal {
+            position: absolute;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff4d6d" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+            background-size: contain;
+            width: 22px;
+            height: 22px;
+            opacity: 0;
+            animation: petalFall 8s linear infinite;
+        }
+
+        @keyframes petalFall {
+            0% { top: -5%; opacity: 0.7; transform: rotate(0deg); }
+            100% { top: 105%; opacity: 0; transform: rotate(360deg); }
+        }
+
+        .opening-container {
+            position: relative;
+            z-index: 10;
+            max-width: 450px;
+            width: 100%;
+            background: rgba(255, 250, 245, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 35px;
+            padding: 25px 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255, 192, 203, 0.9);
+            animation: containerPop 0.8s ease;
+            margin: 20px auto;
+        }
+
+        @keyframes containerPop {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .love-seal {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .heart-big {
+            font-size: 65px;
+            animation: heartbeat 1.2s ease infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+        }
+
+        .glowing-text {
+            font-size: 48px;
+            font-family: 'Dancing Script', cursive;
+            color: #8b1e1e;
+            text-align: center;
+            animation: glowText 2s ease-in-out infinite;
+            text-shadow: 0 0 15px #ff4d6d, 0 0 30px #ff8da1;
+            line-height: 1.1;
+        }
+
+        @keyframes glowText {
+            0%, 100% { text-shadow: 0 0 15px #ff4d6d, 0 0 30px #ff8da1; }
+            50% { text-shadow: 0 0 25px #ff4d6d, 0 0 50px #ff8da1; }
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #c41e3a;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 10px;
+        }
+
+        .typewriter-container {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255, 220, 230, 0.3);
+            border-radius: 20px;
+            border-left: 5px solid #ff4d6d;
+        }
+
+        .typewriter {
+            font-size: 22px;
+            font-family: 'Dancing Script', cursive;
+            color: #4a0404;
+            text-align: center;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .quote-text {
+            font-size: 17px;
+            color: #6b0f0f;
+            font-style: italic;
+            text-align: center;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        .loading-progress {
+            width: 85%;
+            height: 5px;
+            background: rgba(255,77,109,0.15);
+            border-radius: 3px;
+            margin: 12px auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #ff4d6d, #ffb6c1);
+            border-radius: 3px;
+            animation: progressLoad 1.8s ease-out forwards;
+        }
+
+        @keyframes progressLoad {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .button-wrapper {
+            text-align: center;
+            margin: 18px 0 10px;
+        }
+
+        .enter-button {
+            display: inline-block;
+            padding: 16px 35px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8da1);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(255,77,109,0.5);
+            animation: buttonPulse 1.8s infinite;
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 2px;
+            border: 2px solid white;
+            cursor: pointer;
+            width: 100%;
+            max-width: 280px;
+            -webkit-appearance: none;
+        }
+
+        .enter-button:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .warning-sticker {
+            text-align: center;
+            margin: 5px 0;
+        }
+        
+        .warning-sticker p {
+            color: #ff4d6d;
+            font-size: 15px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.95);
+            padding: 7px 18px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 2px solid #ff4d6d;
+        }
+        
+        .footer-text {
+            text-align: center;
+            margin-top: 12px;
+            color: #8b1e1e;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        @media (max-width: 400px) {
+            .opening-container { padding: 20px 15px; }
+            .glowing-text { font-size: 42px; }
+            .subtitle { font-size: 22px; }
+            .typewriter { font-size: 20px; }
+            .enter-button { font-size: 22px; padding: 14px 30px; max-width: 250px; }
+            .heart-big { font-size: 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="love-rain" id="loveRain"></div>
+    <div class="rose-petals" id="rosePetals"></div>
+
+    <div class="opening-container">
+        <div class="love-seal">
+            <span class="heart-big">💝</span>
+        </div>
+
+        <div class="glowing-text">Untuk Rani</div>
+        <div class="subtitle">Cintaku di Hari Valentine</div>
+
+                <!-- FOTO RANI DI OPENING -->
+        <div style="text-align: center; margin: 15px 0;">
+            <img src="assets/indexrani2.jpg" alt="Rani" 
+                 style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 0 30px rgba(255,77,109,0.7); margin-bottom: 10px;"
+                 onerror="this.style.display='none'">
+        </div>
+
+        <div class="typewriter-container">
+            <div class="typewriter" id="typewriter"></div>
+        </div>
+
+        <div class="quote-text">
+            "Jarak 1.985km tak mampu memisahkan hati"
+        </div>
+
+        <div class="loading-progress">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="button-wrapper">
+            <a href="index2.html" class="enter-button" id="enterButton">
+                💝 Buka Surat Cinta
+            </a>
+        </div>
+        
+        <div class="footer-text">
+            ❤️ Dari pacarmu Arrya ❤️
+        </div>
+    </div>
+
+    <script>
+        function createRainHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('rain-heart');
+            const loves = ['❤️', '💕', '💗', '💓', '💖', '💘'];
+            heart.innerHTML = loves[Math.floor(Math.random() * loves.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 4 + 3 + 's';
+            document.getElementById('loveRain').appendChild(heart);
+            setTimeout(() => heart.remove(), 8000);
+        }
+        setInterval(createRainHeart, 200);
+        for (let i = 0; i < 20; i++) setTimeout(createRainHeart, i * 50);
+
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.width = Math.random() * 12 + 15 + 'px';
+            petal.style.height = petal.style.width;
+            petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.getElementById('rosePetals').appendChild(petal);
+            setTimeout(() => petal.remove(), 10000);
+        }
+        setInterval(createPetal, 350);
+        for (let i = 0; i < 15; i++) setTimeout(createPetal, i * 100);
+
+        const text = "Halo Rani... ❤️\nAku punya sesuatu spesial buat kamu...";
+        const typewriterElement = document.getElementById('typewriter');
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                if (text.charAt(i) === '\n') typewriterElement.innerHTML += '<br>';
+                else typewriterElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 70);
+            }
+        }
+        setTimeout(typeWriter, 500);
+
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            document.querySelector('.opening-container').appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 2000);
+        }
+        setInterval(createSparkle, 500);
+
+        document.getElementById('enterButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.style.position = 'fixed';
+                    heart.style.left = '50%';
+                    heart.style.top = '50%';
+                    heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+                    heart.style.animation = 'rain 1s ease-out forwards';
+                    heart.style.zIndex = '9999';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 1000);
+                }, i * 15);
+            }
+            setTimeout(() => window.location.href = 'index2.html', 700);
+        });
+    </script>
+</body>
+</html>

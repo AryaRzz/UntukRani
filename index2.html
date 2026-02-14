@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>🌹 Untuk Rani - Hari Valentine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0000 0%, #4a0000 100%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            position: relative;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 16px;
+            color: rgba(255, 77, 109, 0.5);
+            animation: floatHeart 8s linear infinite;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            100% { transform: translateY(-20vh) translateX(50px); opacity: 0; }
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: rgba(255, 245, 240, 0.98);
+            border-radius: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            padding: 25px 20px;
+            border: 2px solid #ffc0cb;
+            position: relative;
+            z-index: 10;
+            margin: 15px auto;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-banner {
+            background: linear-gradient(135deg, #ff4d6d, #ff8da1);
+            padding: 12px;
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .welcome-text {
+            font-size: 22px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .heart {
+            color: #ff4d6d;
+            font-size: 55px;
+            text-align: center;
+            margin-bottom: 10px;
+            animation: heartbeat 1.2s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+        }
+
+        h1 {
+            color: #8b1e1e;
+            text-align: center;
+            font-size: 38px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .distance-heart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .city-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .city {
+            text-align: center;
+            padding: 12px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex: 1;
+        }
+
+        .city-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #8b1e1e;
+        }
+
+        .heart-divider {
+            font-size: 35px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .message-box {
+            background: white;
+            padding: 20px;
+            border-radius: 22px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid #ff4d6d;
+        }
+
+        .message-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4a0404;
+        }
+
+        .sender-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: #8b1e1e;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .ldr-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            background: linear-gradient(145deg, #ff9a9e, #fad0c4);
+            padding: 18px;
+            border-radius: 22px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8b1e1e;
+        }
+
+        .mood-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .mood-item {
+            text-align: center;
+            flex: 1 1 100px;
+        }
+
+        .mood-emoji {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 30px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8da1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 6px 18px rgba(255,77,109,0.4);
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 2px;
+            border: 2px solid white;
+            transition: all 0.2s;
+            width: 100%;
+            max-width: 260px;
+            margin: 8px auto;
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 380px) {
+            .container { padding: 20px 15px; }
+            h1 { font-size: 34px; }
+            .stat-number { font-size: 32px; }
+            .city-name { font-size: 15px; }
+            .button { font-size: 20px; padding: 12px 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="container">
+        <div class="welcome-banner">
+            <p class="welcome-text">✨ Selamat datang sayang! ✨</p>
+        </div>
+
+        <div class="heart">💝</div>
+        
+        <h1>Dear My Love, Rani</h1>
+        
+        <div style="text-align: center; margin: 15px 0; font-size: 22px; font-family: 'Dancing Script'; color: #8b1e1e;">
+            "Jarak 1.985km tak mampu<br>memisahkan hati kita"
+        </div>
+        
+        <div class="distance-heart">
+            <div class="city-row">
+                <div class="city">
+                    <div style="font-size: 32px;">🏠</div>
+                    <div class="city-name">Makassar</div>
+                </div>
+                
+                <div class="heart-divider">❤️</div>
+                
+                <div class="city">
+                    <div style="font-size: 32px;">🏡</div>
+                    <div class="city-name">Margosari</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOTO PROFILE RANI -->
+        <div style="text-align: center; margin: -10px 0 15px 0;">
+            <img src="assets/indexrani2.jpg" alt="Rani" 
+                style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid #ff4d6d; box-shadow: 0 10px 25px rgba(255,77,109,0.5);"
+                onerror="this.style.display='none'">
+            <p style="color: #8b1e1e; font-family: 'Dancing Script'; font-size: 22px; margin-top: 5px;">My Love ❤️</p>
+        </div>
+        
+        <div class="message-box">
+            <p>
+                Halo sayangnya aku, Rani... 🌹<br><br>
+                Selamat Hari Valentine, cintaku. Maaf aku belum bisa ketemu denganmu secara langsung. Tapi aku buatkan ini khusus untukmu, sebagai bukti bahwa meskipun kita terpisah jarak, kamu selalu di hati.<br><br>
+                Disini, ada cerita kita, kenangan indah, dan janji-janji yang akan aku tepati. Semoga kamu suka ya, sayang.
+            </p>
+            <div class="sender-name">
+                Dari pacarmu yang selalu merindukanmu,<br>
+                Arrya 💕
+            </div>
+        </div>
+        
+        <div class="ldr-stats">
+            <div class="stat-item">
+                <div class="stat-number">1.985</div>
+                <div style="font-size: 14px;">KM</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">27</div>
+                <div style="font-size: 14px;">Hari</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div style="font-size: 14px;">Cinta</div>
+            </div>
+        </div>
+        
+        <div class="mood-section">
+            <div class="mood-item">
+                <span class="mood-emoji">😊</span>
+                <p style="font-size: 14px;"><strong>Kangen Rani</strong></p>
+            </div>
+            <div class="mood-item">
+                <span class="mood-emoji">💭</span>
+                <p style="font-size: 14px;"><strong>Ketemu Rani</strong></p>
+            </div>
+            <div class="mood-item">
+                <span class="mood-emoji">🎵</span>
+                <p style="font-size: 14px;"><strong>Lagu Kita</strong></p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 25px 0 15px;">
+            <p style="font-size: 24px; font-family: 'Dancing Script'; color: #8b1e1e;">
+                Siap lanjut cerita kita? 💫
+            </p>
+        </div>
+        
+        <div class="button-container">
+            <a href="page2.html" class="button">
+                Mulai Cerita Kita ❤️
+            </a>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
+            Untuk Rani • Valentine 2026 • Dari Arya pacarmu
+        </p>
+    </div>
+
+    <script>
+        function createFloatHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            const loves = ['❤️', '💕', '💗', '💓', '💖'];
+            heart.innerHTML = loves[Math.floor(Math.random() * loves.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 15 + 12 + 'px';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.getElementById('floatingHearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createFloatHeart, 350);
+        for (let i = 0; i < 12; i++) setTimeout(createFloatHeart, i * 100);
+    </script>
+</body>
+</html>

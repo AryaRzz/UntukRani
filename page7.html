@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>💝 Untuk Rani Tersayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0000 0%, #4a0000 100%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            position: relative;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 16px;
+            color: rgba(255, 77, 109, 0.5);
+            animation: floatHeart 8s linear infinite;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            100% { transform: translateY(-20vh) translateX(50px); opacity: 0; }
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: rgba(255, 245, 240, 0.98);
+            border-radius: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            padding: 25px 20px;
+            border: 2px solid #ffc0cb;
+            position: relative;
+            z-index: 10;
+            margin: 15px auto;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .final-message {
+            background: linear-gradient(135deg, #ff4d6d, #ff8da1);
+            padding: 30px 20px;
+            border-radius: 35px;
+            color: white;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .heart-big {
+            font-size: 70px;
+            animation: heartbeat 1.2s ease infinite;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+        }
+
+        .final-title {
+            font-size: 42px;
+            font-family: 'Dancing Script', cursive;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .final-subtitle {
+            font-size: 28px;
+            font-family: 'Dancing Script', cursive;
+            color: #fff0f5;
+            margin-bottom: 15px;
+        }
+
+        .rose-emoji {
+            font-size: 50px;
+            margin: 15px 0;
+        }
+
+        .final-quote {
+            font-size: 26px;
+            font-family: 'Dancing Script', cursive;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .quiz-container {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(255,77,109,0.15);
+        }
+
+        .quiz-question {
+            font-size: 20px;
+            color: #8b1e1e;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .quiz-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin: 12px 0;
+            background: #ffe4e1;
+            border: 2px solid #ffb6c1;
+            border-radius: 15px;
+            font-size: 17px;
+            color: #8b1e1e;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            -webkit-appearance: none;
+        }
+
+        .quiz-btn:active {
+            background: #ff4d6d;
+            color: white;
+            border-color: #ff4d6d;
+            transform: scale(0.98);
+        }
+
+        .hidden-message {
+            display: none;
+            background: linear-gradient(145deg, #4CAF50, #45a049);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 25px;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .love-letter {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(255,77,109,0.1);
+            border: 2px solid #ffc0cb;
+        }
+
+        .letter-content {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #4a0404;
+        }
+
+        .letter-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 26px;
+            color: #8b1e1e;
+            text-align: right;
+            margin-top: 25px;
+        }
+
+        .interaction-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .interaction-btn {
+            background: white;
+            border: 3px solid #ff4d6d;
+            padding: 14px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #8b1e1e;
+            font-weight: bold;
+            flex: 1 1 140px;
+            -webkit-appearance: none;
+        }
+
+        .interaction-btn:active {
+            background: #ff4d6d;
+            color: white;
+            transform: scale(0.95);
+        }
+
+        /* ===== LOVE MESSAGE BOX (TANPA POP UP) ===== */
+        .love-message-box {
+            display: none;
+            margin: 20px 0;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .love-message-content {
+            background: linear-gradient(145deg, #ff4d6d, #ff8da1);
+            color: white;
+            padding: 25px;
+            border-radius: 30px;
+            box-shadow: 0 15px 30px rgba(255,77,109,0.3);
+            border: 3px solid white;
+            text-align: center;
+        }
+
+        .love-message-emoji {
+            font-size: 70px;
+            display: block;
+            margin-bottom: 15px;
+            animation: heartbeat 1.2s ease infinite;
+        }
+
+        .love-message-content p {
+            color: white;
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .message-close-btn {
+            background: white;
+            color: #ff4d6d;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            border: 2px solid #ff4d6d;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .message-close-btn:active {
+            transform: scale(0.9);
+            background: #ff4d6d;
+            color: white;
+        }
+
+        .closing-quote {
+            font-size: 28px;
+            font-family: 'Dancing Script', cursive;
+            color: #8b1e1e;
+            text-align: center;
+            margin: 30px 0 20px;
+            line-height: 1.4;
+        }
+
+        .i-love-you {
+            font-size: 32px;
+            color: #ff4d6d;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            margin: 20px 0;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #ff4d6d; }
+            50% { text-shadow: 0 0 30px #ff4d6d; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8da1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 6px 18px rgba(255,77,109,0.4);
+            border: 2px solid white;
+            transition: all 0.2s;
+            margin: 5px;
+            -webkit-appearance: none;
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button-back {
+            background: #888;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .credit {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 12px;
+            border-top: 2px solid #ffc0cb;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 380px) {
+            .container { padding: 20px 15px; }
+            .final-title { font-size: 36px; }
+            .final-subtitle { font-size: 24px; }
+            .quiz-question { font-size: 18px; }
+            .closing-quote { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="container">
+        <div class="final-message">
+            <div class="heart-big">💝</div>
+            <div class="final-title">Happy Valentine's Day!</div>
+            <div class="final-subtitle">Untuk Rani, Cintaku</div>
+            <div class="rose-emoji">🌹 💕 🌹</div>
+            <div class="final-quote">My one and only, my everything</div>
+        </div>
+        
+        <div class="quiz-container">
+            <div class="quiz-question">
+                ❓ Pertanyaan Spesial untuk Rani:<br>
+                <span style="font-size: 22px;">"Siapa pacar Rani yang paling baik, ganteng, dan setia?"</span>
+            </div>
+            
+            <div class="quiz-btn" onclick="checkAnswer('correct', this)">
+                A. Arrya - Pacarmu sendiri ❤️
+            </div>
+            <div class="quiz-btn" onclick="checkAnswer('wrong', this)">
+                B. Cowok lain (Jangan dipilih dong!)
+            </div>
+            <div class="quiz-btn" onclick="checkAnswer('wrong', this)">
+                C. Artis Korea (Kamu mah artisku)
+            </div>
+            
+            <div id="loveMessage" class="hidden-message">
+                <span style="font-size: 50px;">🎉❤️🎉</span>
+                <p style="font-size: 28px; color: white; margin: 15px 0;">BENAR SEKALI! 🥹</p>
+                <p style="font-size: 20px; color: white;">Kamu adalah hadiah terindah dalam hidupku</p>
+                <p style="font-size: 26px; color: white; margin-top: 15px;">I LOVE YOU, RANI! ❤️</p>
+            </div>
+        </div>
+        
+        <div class="love-letter">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px; background: #fff0f5; padding: 15px; border-radius: 25px;">
+                <img src="assets/rani9.jpg" alt="Rani" 
+                     style="width: 90px; height: 90px; border-radius: 20px; object-fit: cover; border: 3px solid #ff4d6d; box-shadow: 0 5px 15px rgba(255,77,109,0.3);"
+                     onerror="this.style.display='none'">
+                <div>
+                    <span style="font-size: 50px;">💌</span>
+                    <h2 style="color: #8b1e1e; font-size: 32px; font-family: 'Dancing Script';">Surat Cinta</h2>
+                </div>
+            </div>
+            
+            <div class="letter-content">
+                <p>Sayangku Rani,</p>
+                <p style="margin-top: 15px;">Selamat Hari Valentine, cintaku. Di hari spesial ini, aku cuma mau bilang kalau kamu adalah hadiah terindah dalam hidupku.</p>
+                <p style="margin-top: 15px;">Terima kasih udah mau bertahan dalam hubungan jarak jauh ini. Aku tahu ini nggak mudah. Tapi meskipun jarak memisahkan, hatiku selalu dekat denganmu.</p>
+                <p style="margin-top: 15px;">Kamu adalah alasan aku tersenyum di tengah penatnya hari. Kamu adalah semangatku buat terus jadi pribadi yang lebih baik. Aku bersyukur banget punya kamu.</p>
+                <p style="margin-top: 15px;">Janji ya, kita akan terus bersama. Aku akan jemput kamu suatu hari nanti, dan kita nggak akan berpisah lagi. Aku sayang kamu, Rani. I love you more than words can say.</p>
+            </div>
+            
+            <div class="letter-signature">
+                Forever yours,<br>
+                Arya ❤️
+            </div>
+        </div>
+        
+        <div class="interaction-buttons">
+            <button onclick="sendHug()" class="interaction-btn">
+                🤗 Peluk Aku
+            </button>
+            <button onclick="sendKiss()" class="interaction-btn">
+                😘 Cium Aku
+            </button>
+        </div>
+        
+        <!-- LOVE MESSAGE BOX (TANPA POP UP) -->
+        <div id="loveMessageBox" class="love-message-box">
+            <div class="love-message-content">
+                <span class="love-message-emoji" id="messageEmoji">🤗</span>
+                <p id="messageText"></p>
+                <button onclick="closeMessage()" class="message-close-btn">❤️</button>
+            </div>
+        </div>
+        
+        <div class="closing-quote">
+            Sampai jumpa di mimpi dan kenyataan, sayang 💫
+        </div>
+        
+        <div class="i-love-you">
+            I love you 3000 ❤️
+        </div>
+        
+        <div class="button-container">
+            <a href="page6.html" class="button button-back">⬅ Kembali</a>
+            <a href="opening.html" class="button" style="background: #ffd700; color: #8b1e1e;">
+                🎵 Mulai dari Awal
+            </a>
+        </div>
+        
+        <div class="credit">
+            Dibuat dengan sepenuh cinta untuk Rani 💕<br>
+            Valentine, 14 Februari 2026<br>
+            Dari Arrya yang selalu merindukanmu<br>
+            <span style="font-size: 20px; color: #8b1e1e; font-family: 'Dancing Script';">Arrya ❤️</span>
+        </div>
+    </div>
+
+    <script>
+        function createFloatHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            heart.innerHTML = ['❤️', '💕', '💗', '💓', '💖'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 15 + 12 + 'px';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.getElementById('floatingHearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createFloatHeart, 400);
+        
+        function checkAnswer(answer, element) {
+            if (answer === 'correct') {
+                element.style.background = '#4CAF50';
+                element.style.color = 'white';
+                element.style.border = 'none';
+                document.getElementById('loveMessage').style.display = 'block';
+                
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '❤️';
+                        heart.style.position = 'fixed';
+                        heart.style.left = Math.random() * 100 + '%';
+                        heart.style.top = '50%';
+                        heart.style.fontSize = Math.random() * 30 + 15 + 'px';
+                        heart.style.animation = 'floatHeart 2s ease-out forwards';
+                        heart.style.zIndex = '9999';
+                        document.body.appendChild(heart);
+                        setTimeout(() => heart.remove(), 2000);
+                    }, i * 20);
+                }
+            } else {
+                element.style.background = '#ff6b6b';
+                element.style.color = 'white';
+                
+                // Tampilkan pesan di message box (bukan alert)
+                document.getElementById('messageEmoji').innerHTML = '😘';
+                document.getElementById('messageText').innerHTML = 'Coba lagi ya sayang! Yang bener A 😘';
+                document.getElementById('loveMessageBox').style.display = 'block';
+                
+                setTimeout(() => {
+                    element.style.background = '#ffe4e1';
+                    element.style.color = '#8b1e1e';
+                }, 1000);
+                
+                setTimeout(() => {
+                    document.getElementById('loveMessageBox').style.display = 'none';
+                }, 3000);
+            }
+        }
+        
+        function closeMessage() {
+            document.getElementById('loveMessageBox').style.display = 'none';
+        }
+        
+        function sendHug() {
+            // Animasi pelukan
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const hug = document.createElement('div');
+                    hug.innerHTML = '🤗';
+                    hug.style.position = 'fixed';
+                    hug.style.left = Math.random() * window.innerWidth + 'px';
+                    hug.style.top = Math.random() * window.innerHeight + 'px';
+                    hug.style.fontSize = Math.random() * 30 + 30 + 'px';
+                    hug.style.animation = 'floatHeart 2s ease-out';
+                    hug.style.pointerEvents = 'none';
+                    hug.style.zIndex = '9999';
+                    document.body.appendChild(hug);
+                    setTimeout(() => hug.remove(), 2000);
+                }, i * 50);
+            }
+            
+            // Tampilkan pesan romantis
+            document.getElementById('messageEmoji').innerHTML = '🤗';
+            document.getElementById('messageText').innerHTML = 'Dapat pelukan hangat dari pacarmu! 🤗❤️<br><span style="font-size: 22px;">I miss you, Rani!</span>';
+            document.getElementById('loveMessageBox').style.display = 'block';
+            
+            // Auto close setelah 5 detik
+            setTimeout(() => {
+                document.getElementById('loveMessageBox').style.display = 'none';
+            }, 5000);
+        }
+        
+        function sendKiss() {
+            // Animasi ciuman
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const kiss = document.createElement('div');
+                    kiss.innerHTML = '😘';
+                    kiss.style.position = 'fixed';
+                    kiss.style.left = Math.random() * window.innerWidth + 'px';
+                    kiss.style.top = Math.random() * window.innerHeight + 'px';
+                    kiss.style.fontSize = Math.random() * 30 + 30 + 'px';
+                    kiss.style.animation = 'floatHeart 2s ease-out';
+                    kiss.style.pointerEvents = 'none';
+                    kiss.style.zIndex = '9999';
+                    document.body.appendChild(kiss);
+                    setTimeout(() => kiss.remove(), 2000);
+                }, i * 50);
+            }
+            
+            // Tampilkan pesan romantis
+            document.getElementById('messageEmoji').innerHTML = '😘';
+            document.getElementById('messageText').innerHTML = 'Cium dari pacarmu! 😘💋<br><span style="font-size: 22px;">I love you, sayang!</span>';
+            document.getElementById('loveMessageBox').style.display = 'block';
+            
+            // Auto close setelah 5 detik
+            setTimeout(() => {
+                document.getElementById('loveMessageBox').style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

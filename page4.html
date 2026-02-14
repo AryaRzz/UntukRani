@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>📷 Harapan & Impian - Rani & [Nama Kamu]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0000 0%, #4a0000 100%);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            position: relative;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 16px;
+            color: rgba(255, 77, 109, 0.5);
+            animation: floatHeart 8s linear infinite;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            100% { transform: translateY(-20vh) translateX(50px); opacity: 0; }
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: rgba(255, 245, 240, 0.98);
+            border-radius: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            padding: 25px 20px;
+            border: 2px solid #ffc0cb;
+            position: relative;
+            z-index: 10;
+            margin: 15px auto;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #8b1e1e;
+            text-align: center;
+            font-size: 36px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: #b22222;
+            text-align: center;
+            font-size: 24px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 20px;
+        }
+
+        .subtitle-impian {
+            text-align: center;
+            font-size: 18px;
+            color: #ff4d6d;
+            margin-bottom: 25px;
+            font-style: italic;
+            background: rgba(255, 230, 240, 0.5);
+            padding: 12px;
+            border-radius: 20px;
+            border: 2px dashed #ffb6c1;
+        }
+
+        /* ===== MEMORY WALL UNTUK IMPIAN ===== */
+        .memory-wall {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        @media (min-width: 400px) {
+            .memory-wall {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        .memory-item {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            border: 3px solid white;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-item:active {
+            transform: scale(0.97);
+        }
+
+        .memory-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #ff9a9e, #fad0c4, #ffb6c1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            transition: transform 0.5s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .memory-image span {
+            font-size: 30px;
+            margin-top: 10px;
+            font-family: 'Dancing Script', cursive;
+            background: rgba(0,0,0,0.3);
+            padding: 5px 15px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .memory-item:hover .memory-image {
+            transform: scale(1.1);
+        }
+
+        .memory-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(139, 30, 30, 0.9));
+            color: white;
+            padding: 20px 15px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            text-align: center;
+        }
+
+        .memory-item:hover .memory-caption {
+            transform: translateY(0);
+        }
+
+        .memory-caption h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-family: 'Dancing Script', cursive;
+            color: #ffd700;
+        }
+
+        .memory-caption p {
+            font-size: 14px;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+
+        /* ===== BUCKET LIST IMPIAN ===== */
+        .bucket-list {
+            background: white;
+            padding: 25px;
+            border-radius: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(255,77,109,0.15);
+            border: 2px solid #ffe4e1;
+        }
+
+        .bucket-title {
+            font-size: 32px;
+            color: #8b1e1e;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .bucket-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 2px dashed #ffc0cb;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .bucket-item:last-child {
+            border-bottom: none;
+        }
+
+        .bucket-item:hover {
+            background: #fff0f5;
+            border-radius: 15px;
+        }
+
+        .bucket-check {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: #ff4d6d;
+            flex-shrink: 0;
+        }
+
+        .bucket-text {
+            flex: 1;
+            color: #4a0404;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #999;
+            font-style: italic;
+        }
+
+        .bucket-quote {
+            margin-top: 25px;
+            font-size: 20px;
+            font-style: italic;
+            color: #ff4d6d;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            background: #fff0f5;
+            padding: 15px;
+            border-radius: 50px;
+            border: 2px dotted #ffb6c1;
+        }
+
+        /* ===== MESSAGE IMPIAN ===== */
+        .dream-message {
+            background: linear-gradient(145deg, #fff9f9, #ffeef2);
+            padding: 20px;
+            border-radius: 25px;
+            margin: 25px 0;
+            text-align: center;
+            border-left: 8px solid #ff4d6d;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #4a0404;
+        }
+
+        .dream-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: #8b1e1e;
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: linear-gradient(45deg, #ff4d6d, #ff8da1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 6px 18px rgba(255,77,109,0.4);
+            border: 2px solid white;
+            transition: all 0.2s;
+            margin: 5px;
+            -webkit-appearance: none;
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button-back {
+            background: #888;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .sparkle-icon {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        @media (max-width: 380px) {
+            .container { padding: 20px 15px; }
+            h1 { font-size: 32px; }
+            .bucket-title { font-size: 28px; }
+            .bucket-item { font-size: 15px; }
+            .dream-message { font-size: 16px; }
+            .memory-image { font-size: 50px; }
+            .memory-image span { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="container">
+        <h1>📷 Harapan & Impian Kita</h1>
+        <h2>Yang akan kita wujudkan bersama</h2>
+        
+        <div class="subtitle-impian">
+            ✨ Karena kita belum punya banyak kenangan,<br>
+            mari kita buat rencana untuk masa depan! ✨
+        </div>
+        
+        <!-- MEMORY WALL - IMPIAN YANG AKAN DATANG -->
+        <div class="memory-wall">
+            <!-- IMPIAN 1: Bertemu pertama kali -->
+            <div class="memory-item">
+                <div class="memory-image">
+                    🤝
+                    <span>Bertemu</span>
+                </div>
+                <div class="memory-caption">
+                    <h3>Bertemu Pertama Kali</h3>
+                    <p>Aku akan peluk kamu sekencang-kencangnya! 🤗</p>
+                </div>
+            </div>
+            
+            <!-- IMPIAN 2: Jalan bareng -->
+            <div class="memory-item">
+                <div class="memory-image">
+                    🌊
+                    <span>Jalan Bareng</span>
+                </div>
+                <div class="memory-caption">
+                    <h3>Jalan-jalan ke Pantai</h3>
+                    <p>Nonton sunset sambil pegangan tangan 🌅</p>
+                </div>
+            </div>
+            
+            <!-- IMPIAN 3: Makan bareng -->
+            <div class="memory-item">
+                <div class="memory-image">
+                    🍜
+                    <span>Makan Bareng</span>
+                </div>
+                <div class="memory-caption">
+                    <h3>Culinary Date</h3>
+                    <p>Makan makanan favorit kita berdua 🍝</p>
+                </div>
+            </div>
+            
+            <!-- IMPIAN 4: Nonton bioskop -->
+            <div class="memory-item">
+                <div class="memory-image">
+                    🎬
+                    <span>Nonton Bioskop</span>
+                </div>
+                <div class="memory-caption">
+                    <h3>Movie Date</h3>
+                    <p>Nonton film sambil makan popcorn 🍿</p>
+                </div>
+            </div>
+            
+            <!-- IMPIAN 5: Foto berdua -->
+            <div class="memory-item">
+                <div class="memory-image">
+                    📸
+                    <span>Foto Berdua</span>
+                </div>
+                <div class="memory-caption">
+                    <h3>Photo Session</h3>
+                    <p>Bikin foto prewedding yang cantic 🥰</p>
+                </div>
+            </div>
+            
+            <!-- IMPIAN 6: Rayain anniversary -->
+            <div class="memory-item">
+                <div class="memory-image">
+                    🎂
+                    <span>Anniversary</span>
+                </div>
+                <div class="memory-caption">
+                    <h3>Rayain Anniversary</h3>
+                    <p>Rayain hari spesial kita bersama-sama 🎉</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PESAN SPESIAL -->
+        <div class="dream-message">
+            <p>
+                Sayang, kita emang belum sempat ngelakuin banyak hal bersama.<br>
+                Tapi justru itu yang bikin aku makin semangat buat nunggu dan merencanakan masa depan kita.<br>
+                <strong>Semua impian ini akan kita wujudkan satu per satu, bersama-sama.</strong>
+            </p>
+            <div class="dream-signature">
+                Aku sayang kamu, Rani ❤️
+            </div>
+        </div>
+        
+        <!-- BUCKET LIST IMPIAN KITA -->
+        <div class="bucket-list">
+            <div class="bucket-title">🎯 Bucket List Impian Kita</div>
+            
+            <div class="bucket-item">
+                <input type="checkbox" class="bucket-check" onclick="toggleComplete(this)">
+                <span class="bucket-text">🤝 Bertemu pertama kali dan peluk aku</span>
+            </div>
+            <div class="bucket-item">
+                <input type="checkbox" class="bucket-check" onclick="toggleComplete(this)">
+                <span class="bucket-text">🌊 Jalan-jalan ke pantai lihat sunset</span>
+            </div>
+            <div class="bucket-item">
+                <input type="checkbox" class="bucket-check" onclick="toggleComplete(this)">
+                <span class="bucket-text">🍜 Makan bareng di restoran favorit</span>
+            </div>
+            <div class="bucket-item">
+                <input type="checkbox" class="bucket-check" onclick="toggleComplete(this)">
+                <span class="bucket-text">🎬 Nonton bioskop sambil pegangan tangan</span>
+            </div>
+            <div class="bucket-item">
+                <input type="checkbox" class="bucket-check" onclick="toggleComplete(this)">
+                <span class="bucket-text">📸 Foto berdua yang cantic</span>
+            </div>
+            <div class="bucket-item">
+                <input type="checkbox" class="bucket-check" onclick="toggleComplete(this)">
+                <span class="bucket-text">🎂 Rayain anniversary bersama-sama</span>
+            </div>
+            <div class="bucket-item">
+                <input type="checkbox" class="bucket-check" onclick="toggleComplete(this)">
+                <span class="bucket-text">☕ Ngopi bareng di kafe sambil ngobrol</span>
+            </div>
+            <div class="bucket-item">
+                <input type="checkbox" class="bucket-check" onclick="toggleComplete(this)">
+                <span class="bucket-text">🎁 Ngasih kado langsung ke kamu</span>
+            </div>
+            
+            <div class="bucket-quote">
+                Satu per satu akan kita coret, sayang! 💪❤️
+            </div>
+        </div>
+        
+        <!-- BUTTON NAVIGASI -->
+        <div class="button-container">
+            <a href="page3.html" class="button button-back">⬅ Kembali</a>
+            <a href="page5.html" class="button">Playlist Cinta Kita ➡</a>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; color: #b22222; font-size: 14px; font-style: italic;">
+            Semoga cepat terkabul 💫
+        </p>
+    </div>
+
+    <script>
+        function createFloatHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            heart.innerHTML = ['❤️', '💕', '💗', '💓', '💖'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 15 + 12 + 'px';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.getElementById('floatingHearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createFloatHeart, 400);
+        
+        function toggleComplete(checkbox) {
+            const span = checkbox.nextElementSibling;
+            if (checkbox.checked) {
+                span.classList.add('completed');
+                confettiLove();
+            } else {
+                span.classList.remove('completed');
+            }
+        }
+        
+        function confettiLove() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.top = '50%';
+                    heart.style.fontSize = Math.random() * 25 + 15 + 'px';
+                    heart.style.animation = 'floatHeart 2s ease-out forwards';
+                    heart.style.zIndex = '9999';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 2000);
+                }, i * 50);
+            }
+            
+            // Tambah efek sparkle
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.classList.add('sparkle-icon');
+                    sparkle.style.left = Math.random() * 100 + '%';
+                    sparkle.style.top = Math.random() * 100 + '%';
+                    document.querySelector('.container').appendChild(sparkle);
+                    setTimeout(() => sparkle.remove(), 2000);
+                }, i * 100);
+            }
+        }
+    </script>
+</body>
+</html>
